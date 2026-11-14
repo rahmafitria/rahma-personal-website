@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Rahma Fitria Su’ud — a little archive of curiosity, learning, creativity, and becoming.">
+  <meta name="theme-color" content="#f7f1e8">
+  <title>A Little Universe of Rahma</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --ivory: #f7f1e8;
+      --paper: #fbf8f2;
+      --burgundy: #6e1f2f;
+      --pink: #d9a5a8;
+      --brown: #6b5242;
+      --ink: #2a1c1a;
+      --line: #dccfbe;
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans: 'Jost', system-ui, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: 82px; }
+    body {
+      background: var(--ivory);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 17px;
+      line-height: 1.7;
+    }
+    a { color: inherit; }
+    button { font: inherit; }
+    .wrap { width: min(100% - 48px, 1000px); margin-inline: auto; }
+    section { padding: 82px 0; border-top: 1px solid var(--line); }
+    h1, h2, h3 {
+      color: var(--burgundy);
+      font-family: var(--serif);
+      font-weight: 600;
+      line-height: 1.1;
+    }
+    h1 { font-size: clamp(3.2rem, 8vw, 6.3rem); }
+    h2 { font-size: clamp(2.3rem, 5vw, 3.4rem); margin-bottom: 8px; }
+    h3 { font-size: 1.55rem; color: var(--ink); }
+    p + p { margin-top: 14px; }
+    .eyebrow {
+      color: var(--brown);
+      font-size: .88rem;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+    .sub {
+      max-width: 38ch;
+      margin-bottom: 34px;
+      color: var(--brown);
+      font: italic 1.4rem var(--serif);
+    }
+    .muted { color: var(--brown); }
+    :focus-visible { outline: 3px solid var(--burgundy); outline-offset: 4px; }
+
+    /* Navigation */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 1px solid var(--line);
+      background: rgba(247, 241, 232, .94);
+      backdrop-filter: blur(10px);
+    }
+    nav {
+      min-height: 66px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .logo {
+      color: var(--burgundy);
+      font: 700 1.5rem var(--serif);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    nav ul {
+      display: flex;
+      gap: 18px;
+      padding: 0;
+      overflow-x: auto;
+      list-style: none;
+    }
+    nav a:not(.logo) {
+      color: var(--brown);
+      font-size: .9rem;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    nav a:hover { color: var(--burgundy); }
+
+    /* Hero */
+    .hero {
+      min-height: 590px;
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      align-items: center;
+      gap: 34px;
+      padding-block: 76px 90px;
+    }
+    .hero h1 { margin: 12px 0 18px; letter-spacing: -.025em; }
+    .hero h1 i { color: var(--pink); font-weight: 500; }
+    .tagline {
+      max-width: 34ch;
+      margin-bottom: 18px;
+      color: var(--brown);
+      font: italic 1.55rem/1.35 var(--serif);
+    }
+    .intro { max-width: 52ch; }
+    .btns { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+    .btn {
+      display: inline-block;
+      padding: 11px 23px;
+      border: 1.5px solid var(--burgundy);
+      border-radius: 999px;
+      background: var(--burgundy);
+      color: var(--ivory);
+      font-weight: 500;
+      text-decoration: none;
+      transition: transform .18s ease, background .18s ease;
+    }
+    .btn.ghost { background: transparent; color: var(--burgundy); }
+    .btn:hover { transform: translateY(-3px); }
+    .orbit { width: 100%; max-width: 370px; margin-inline: auto; }
+    .orbit .ring { fill: none; stroke: var(--line); stroke-width: 1.2; }
+    .orbit g { transform-origin: 200px 200px; animation: spin linear infinite; }
+    .orbit .a { animation-duration: 26s; }
+    .orbit .b { animation-duration: 42s; animation-direction: reverse; }
+    .orbit .c { animation-duration: 64s; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* Shared layouts */
+    .cols { display: grid; grid-template-columns: 1.2fr 1fr; gap: 48px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 28px; }
+    .item { padding-top: 14px; border-top: 1.5px solid var(--burgundy); }
+    .item p, .item li { color: var(--brown); font-size: .98rem; }
+    .item ul { padding-left: 19px; margin-top: 8px; }
+    .facts {
+      padding: 2px 0 2px 22px;
+      border-left: 2px solid var(--pink);
+      list-style: none;
+    }
+    .facts li { padding: 5px 0; }
+    .facts strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--burgundy);
+      font: 600 1.5rem var(--serif);
+    }
+    .paper {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      background: var(--paper);
+    }
+    .hint { margin-top: 12px; color: var(--brown); font-size: .92rem; }
+
+    /* Experience */
+    .exp { width: 100%; border-collapse: collapse; }
+    .exp td { padding: 16px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+    .exp td:first-child {
+      width: 32%;
+      color: var(--burgundy);
+      font: 600 1.4rem var(--serif);
+    }
+    .exp td:last-child { color: var(--brown); }
+
+    /* Creative work */
+    .art-card { min-width: 0; }
+    .art {
+      aspect-ratio: 4 / 4.6;
+      display: flex;
+      align-items: flex-end;
+      margin-bottom: 13px;
+      padding: 17px;
+      border: 1px solid rgba(110,31,47,.12);
+      border-radius: 3px;
+      background-size: cover;
+      background-position: center;
+      color: var(--ivory);
+      font: 600 1.55rem/1.15 var(--serif);
+    }
+    .art.p1 { background: linear-gradient(150deg, #b5535f, #4a1220); }
+    .art.p2 { background: linear-gradient(150deg, #9a7b66, #3f2e24); }
+    .art.p3 { background: linear-gradient(150deg, #e3b9bb, #a56b73); }
+
+    /* Thoughts */
+    .filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px; }
+    .filters button {
+      padding: 7px 15px;
+      border: 1.5px solid var(--line);
+      border-radius: 999px;
+      background: transparent;
+      color: var(--brown);
+      cursor: pointer;
+    }
+    .filters button[aria-pressed="true"] {
+      border-color: var(--burgundy);
+      background: var(--burgundy);
+      color: var(--ivory);
+    }
+    .post {
+      display: block;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--line);
+      text-decoration: none;
+    }
+    .post span { color: var(--brown); font-size: .88rem; }
+    .post h3 { margin: 3px 0 4px; transition: color .15s; }
+    .post:hover h3 { color: var(--pink); }
+
+    /* Timeline and explorations */
+    .tl { margin-top: 10px; padding-left: 30px; border-left: 2px solid var(--pink); }
+    .tl details { position: relative; padding: 4px 0 18px; }
+    .tl details::before {
+      position: absolute;
+      top: 12px;
+      left: -39px;
+      width: 14px;
+      height: 14px;
+      border: 2px solid var(--burgundy);
+      border-radius: 50%;
+      background: var(--ivory);
+      content: "";
+    }
+    .tl details[open]::before { background: var(--burgundy); }
+    .tl summary { cursor: pointer; color: var(--burgundy); font: 600 1.45rem var(--serif); }
+    .tl summary::-webkit-details-marker { display: none; }
+    .tl details p { max-width: 58ch; margin-top: 6px; color: var(--brown); }
+    .quote {
+      max-width: 32ch;
+      margin-top: 34px;
+      color: var(--burgundy);
+      font: italic 1.7rem/1.3 var(--serif);
+    }
+    .chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px; }
+    .chip { padding: 6px 15px; border: 1px solid var(--line); border-radius: 999px; background: var(--paper); }
+    .chip.dream { border-style: dashed; border-color: var(--pink); }
+
+    /* Contact and footer */
+    .contact-links { display: flex; flex-wrap: wrap; gap: 12px 24px; margin-top: 20px; }
+    .contact-links a { color: var(--burgundy); font-weight: 500; }
+    footer { padding: 30px 0; border-top: 1px solid var(--line); color: var(--brown); font-size: .9rem; text-align: center; }
+
+    @media (max-width: 760px) {
+      .wrap { width: min(100% - 36px, 1000px); }
+      nav { align-items: flex-start; flex-direction: column; padding-block: 10px; gap: 4px; }
+      nav ul { width: 100%; gap: 16px; padding-bottom: 4px; }
+      .hero { min-height: auto; grid-template-columns: 1fr; padding-block: 64px; }
+      .orbit { max-width: 260px; }
+      .cols { grid-template-columns: 1fr; gap: 28px; }
+      section { padding: 64px 0; }
+      .exp td:first-child { width: 35%; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .orbit g { animation: none; }
+      *, *::before, *::after { transition-duration: .01ms !important; }
+    }
+    .art-image {
+  display: block;
+  width: 100%;
+  height: 375px;
+  object-fit: contain;
+  background: #ffffff;
+  border-radius: 12px;
+  margin-bottom: 18px;
+}
+.thought-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+  margin-top: 35px;
+}
+/* THOUGHTS CARD */
+/* THOUGHTS CARD */
+.thought-card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.thought-cover {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.thought-content h3 {
+  margin: 10px 0;
+  font-size: 23px;
+}
+
+.thought-category {
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+/* COMING SOON */
+.coming-soon-cover {
+  width: 100%;
+  height: 230px;
+  border-radius: 12px;
+  background: #eee8df;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--serif);
+  font-size: 25px;
+  color: #806b60;
+}
+
+@media (max-width: 768px) {
+  .thought-grid {
+    grid-template-columns: 1fr;
+  }
+}
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="wrap">
+      <nav aria-label="Navigasi utama">
+        <a class="logo" href="#home">rahma.</a>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#academia">Academia</a></li>
+          <li><a href="#experiences">Experiences</a></li>
+          <li><a href="#creations">Creations</a></li>
+          <li><a href="#Thoughts">Thoughts</a></li>
+          <li><a href="#explorations">Dreams</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HOME -->
+    <div class="wrap hero" id="home">
+      <div>
+        <p class="eyebrow">A personal space by Rahma Fitria Su’ud</p>
+        <h1>A little universe <i>of Rahma</i></h1>
+        <p class="tagline">Curious about the universe, passionate about people, and always becoming.</p>
+        <p class="intro">Hello, I'm Rahma — a Physics student at Universitas Brawijaya, originally from Rembang, Indonesia. I love learning how the world works, exploring ideas across different fields, and finding ways to turn knowledge into something meaningful.</p>
+        <div class="btns">
+          <a class="btn" href="#academia">Explore my universe</a>
+          <a class="btn ghost" href="#about">Get to know me</a>
+        </div>
+      </div>
+
+      <svg class="orbit" viewBox="0 0 400 400" role="img" aria-label="Ilustrasi orbit planet yang bergerak">
+        <circle class="ring" cx="200" cy="200" r="70"/>
+        <circle class="ring" cx="200" cy="200" r="125"/>
+        <circle class="ring" cx="200" cy="200" r="180"/>
+        <circle cx="200" cy="200" r="26" fill="#6e1f2f"/>
+        <g class="a"><circle cx="270" cy="200" r="9" fill="#d9a5a8"/></g>
+        <g class="b"><circle cx="200" cy="75" r="12" fill="#6b5242"/></g>
+        <g class="c"><circle cx="380" cy="200" r="7" fill="#6e1f2f"/><circle cx="20" cy="200" r="5" fill="#d9a5a8"/></g>
+      </svg>
+    </div>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="wrap">
+        <h2>About me</h2>
+        <p class="sub">A little more than a name and a degree.</p>
+        <div class="cols">
+          <div>
+            <p>I am a Physics undergraduate at Universitas Brawijaya with a curiosity that moves between the sciences, languages, education, and the creative arts. Alongside my academic journey, I have spent more than three years exploring graphic design and photography, starting in high school.</p>
+            <p>Through student organizations, educational communities, and creative projects, I have learned to work with people, manage responsibilities, and turn ideas into something tangible — from event administration and documentation to visual communication and social media content.</p>
+            <p>I believe curiosity becomes more meaningful when it is shared: through thoughtful conversations, useful work, and opportunities to contribute to the people around us.</p>
+          </div>
+          <ul class="facts">
+            <li><strong>A few things about me</strong></li>
+            <li>Based in Malang, Indonesia.</li>
+            <li>Originally from Rembang, Central Java.</li>
+            <li>Physics undergraduate at Universitas Brawijaya.</li>
+            <li>Interested in science, education, languages, and humanities.</li>
+            <li>Drawn to photography, painting, writing, and meaningful conversations.</li>
+            <li>Always curious; always learning.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACADEMIA -->
+    <section id="academia">
+      <div class="wrap">
+        <h2>Academic journey</h2>
+        <p class="sub">Learning to understand the universe, one question at a time.</p>
+        <div class="grid">
+          <article class="item">
+            <h3>Education</h3>
+            <ul>
+              <li>Undergraduate student in Physics, Universitas Brawijaya.</li>
+              <li>Previously studied in an environment that combined formal education and pesantren learning.</li>
+            </ul>
+          </article>
+          <article class="item">
+            <h3>Selected achievements</h3>
+            <ul>
+              <li>Juara 1 Munaqosyah Imrithi, Haflah Tasyakkur PP Al-Hamidiyyah 1 Lasem.</li>
+              <li>Rank 4, KSM Physics at Rembang regency level.</li>
+            </ul>
+          </article>
+          <article class="item">
+            <h3>Learning interests</h3>
+            <ul>
+              <li>Physics and the natural sciences.</li>
+              <li>Mathematics and scientific reasoning.</li>
+              <li>Nahwu and Shorof.</li>
+              <li>How science connects with philosophy and society.</li>
+            </ul>
+          </article>
+          <article class="item">
+            <h3>Creative &amp; practical skills</h3>
+            <ul>
+              <li>Graphic design and visual content creation (3+ years of experience).</li>
+              <li>Canva and Figma.</li>
+              <li>Photography, event documentation, and basic photo editing.</li>
+              <li>Administration, document archiving, and Microsoft Office.</li>
+              <li>Google Docs and Google Sheets.</li>
+              <li>Communication, teamwork, time management, and adaptability.</li>
+            </ul>
+          </article>
+      </div>
+    </section>
+
+    <!-- EXPERIENCES -->
+    <section id="experiences">
+      <div class="wrap">
+        <h2>Beyond the classroom</h2>
+        <p class="sub">Learning also happens through people, service, and shared projects.</p>
+        <table class="exp">
+          <tr>
+            <td>FORKALAM FSTeM · Secretary, Department of Inventory &amp; Iqtishody <span class="muted">(2026)</span></td>
+            <td>Supporting administration, finance, inventory management, and entrepreneurship-related activities.</td>
+          </tr>
+          <tr>
+            <td>Islamic Entrepreneurship Day · Secretary <span class="muted">(2026)</span></td>
+            <td>Handling administrative needs and supporting the event's entrepreneurship activities.</td>
+          </tr>
+          <tr>
+            <td>FSLDK Nasional XXII · Multimedia Committee <span class="muted">(2026)</span></td>
+            <td>Documenting event activities, preparing visual materials, and creating a teaser for the UB videotron.</td>
+          </tr>
+          <tr>
+            <td>Sambut Maba Himaraya · Treasurer <span class="muted">(2026)</span></td>
+            <td>Managing administration for the event series.</td>
+          </tr>
+          <tr>
+            <td>PP Alhamidiyyah · Secretary, Administration &amp; External Relations <span class="muted">(2025)</span></td>
+            <td>Supporting administrative work and external communication.</td>
+          </tr>
+          <tr>
+            <td>Yayasan Alhamidiyyah · Social Media Admin &amp; Journalism Coordinator <span class="muted">(2023–2025)</span></td>
+            <td>Managing social media and external communication; creating Instagram posts, stories, brochures, reels, and event documentation materials.</td>
+          </tr>
+          <tr>
+            <td>Creative Visual Technology, ZPEE MIPA UB · Committee <span class="muted">(2025)</span></td>
+            <td>Handling event documentation and preparing designs for event needs and decorations.</td>
+          </tr>
+          <tr>
+            <td>Campus Fair MANDURA · Creative Media Design Committee <span class="muted">(2025)</span></td>
+            <td>Creating visual materials for event announcements, including Instagram feed posts and stories.</td>
+          </tr>
+          <tr>
+            <td>Past &amp; Pixels Photobox · Paid Designer &amp; Editor <span class="muted">(2026)</span></td>
+            <td>Creating design materials for photobox products.</td>
+          </tr>
+        </table>
+        <p class="hint">A growing record of the teams, communities, and projects that have shaped my experience.</p>
+      </div>
+    </section>
+
+    <!-- CREATIONS -->
+<section id="creations">
+  <div class="wrap">
+    <h2>The creative corner</h2>
+    <p class="sub">A place for the things I make, notice, and want to remember.</p>
+
+    <div class="grid">
+
+      <!-- SHARED FLAMES -->
+      <article class="art-card">
+        <img
+          class="art-image"
+          src="images/Shared%20Flames.png"
+          alt="Shared Flames Photography"
+        >
+        <h3>Shared Flames</h3>
+        <p class="hint">
+          Photography — A reflection on forest and land fires,
+          the environment, and the shared responsibility
+          we have to protect it.
+        </p>
+      </article>
+
+      <!-- THE UNSEEN CATERPILLAR -->
+      <article class="art-card">
+        <img
+          class="art-image"
+          src="images/The%20Unseen%20Caterpillar.png"
+          alt="The Unseen Caterpillar Painting"
+        >
+        <h3>The Unseen Caterpillar</h3>
+        <p class="hint">
+          Painting — We are not merely what we see in the mirror
+          today; we are also the possibilities of what we
+          can become tomorrow.
+        </p>
+      </article>
+
+      <!-- WORDS & WRITING -->
+      <article class="art-card">
+        <div class="art p3">Little things worth remembering</div>
+        <h3>Words &amp; writing</h3>
+        <p class="hint">
+          Personal reflections, short pieces, and words
+          collected from ordinary moments.
+        </p>
+      </article>
+
+    </div>
+
+    <p class="hint">
+      My creative practice also includes event identity and
+      promotional graphics, Instagram feed and story designs,
+      certificates, banners, photobox layouts, and event documentation.
+    </p>
+  </div>
+</section>
+
+    <!-- Thoughts -->
+    <section id="thoughts">
+  <div class="wrap">
+    <h2>Thoughts</h2>
+    <p class="sub">
+      Words, reflections, and things I find worth thinking about.
+    </p>
+
+    <div class="thought-grid">
+
+      <!-- FIRST ARTICLE -->
+      <article class="thought-card">
+        <img
+          src="images/art-of-wondering.jpg"
+          alt="The Art of Wondering"
+          class="thought-cover"
+        >
+
+        <div class="thought-content">
+          <span class="thought-category">REFLECTIONS · 5 MIN READ</span>
+
+          <h3>Seni untuk Selalu Bertanya</h3>
+
+          <p>
+            Tentang rasa ingin tahu, kehidupan, dan hal-hal
+            yang belum sepenuhnya kita pahami.
+          </p>
+
+          <a href="thoughts/art-of-wondering.html">
+            Read the story →
+          </a>
+        </div>
+      </article>
+
+      <!-- COMING SOON -->
+      <article class="thought-card coming-soon">
+        <div class="coming-soon-cover">
+          <span>Coming Soon</span>
+        </div>
+        <div class="thought-content">
+          <span class="thought-category">A LITTLE SPACE FOR THOUGHTS</span>
+          <h3>Something is brewing...</h3>
+          <p>
+            More thoughts, stories, and reflections
+            will find their way here.
+          </p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+    <!-- EXPLORATIONS -->
+    <section id="explorations">
+      <div class="wrap">
+        <h2>The world is my classroom</h2>
+        <p class="sub">Places, perspectives, and possibilities.</p>
+        <div class="cols">
+          <div>
+            <h3>Places that shaped my journey</h3>
+            <div class="chips">
+              <span class="chip">Rembang</span>
+              <span class="chip">Lasem</span>
+              <span class="chip">Malang</span>
+            </div>
+            <h3 style="margin-top:28px;">Places I hope to explore</h3>
+            <div class="chips">
+              <span class="chip dream">More of Indonesia</span>
+              <span class="chip dream">Southeast Asia</span>
+              <span class="chip dream">Beyond</span>
+            </div>
+          </div>
+          <div>
+            <h3>Looking ahead</h3>
+            <p class="muted" style="margin-top:8px;">I hope to keep learning across borders, meet people with different perspectives, and pursue opportunities for further study. For now, I am building the academic foundation, skills, and experiences that will help me take the next step.</p>
+          </div>
+        </div>
+
+        <h2 style="margin-top:76px;">A timeline of becoming</h2>
+        <p class="sub">Every chapter leaves something to learn.</p>
+        <div class="tl">
+          <details>
+            <summary>Growing up in Rembang</summary>
+            <p>The beginning of my story, shaped by home, family, school, and the curiosity that kept growing.</p>
+          </details>
+          <details>
+            <summary>Learning in two worlds</summary>
+            <p>Experiencing formal education alongside pesantren learning, including the study of classical Arabic texts.</p>
+          </details>
+          <details>
+            <summary>Discovering the joy of learning</summary>
+            <p>Exploring Physics, mathematics, language, and academic competitions — and learning to enjoy the process, not only the result.</p>
+          </details>
+          <details>
+            <summary>Beginning a new chapter at UB</summary>
+            <p>Starting my undergraduate journey in Physics at Universitas Brawijaya and discovering new ways to learn and grow.</p>
+          </details>
+          <details>
+            <summary>Learning through communities</summary>
+            <p>Taking part in organizational and educational activities, collaborating with others, and learning through shared work.</p>
+          </details>
+          <details>
+            <summary>What comes next</summary>
+            <p>Continuing to build my skills, explore research interests, and work toward opportunities for further study.</p>
+          </details>
+        </div>
+        <p class="quote">“I am not just documenting where I have been, but also who I am becoming.”</p>
+      </div>
+    </section>
+
+    <!-- LITTLE THINGS -->
+    <section id="little">
+      <div class="wrap">
+        <h2>Little things about life</h2>
+        <p class="sub">Small interests that make a life feel like mine.</p>
+        <div class="grid">
+          <article class="paper">
+            <h3>Things I love learning</h3>
+            <p class="hint">Physics, languages, history, philosophy, psychology, and the many connections between them.</p>
+          </article>
+          <article class="paper">
+            <h3>Creative hobbies</h3>
+            <p class="hint">Photography, painting, drawing, writing, and collecting visual inspiration.</p>
+          </article>
+          <article class="paper">
+            <h3>Conversations I enjoy</h3>
+            <p class="hint">Curious questions, thoughtful discussions, unexpected facts, and stories about how people see the world.</p>
+          </article>
+          <article class="paper">
+            <h3>On my playlist</h3>
+            <p class="hint">A little collection of songs that accompany different seasons of learning and life. Playlist coming soon.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact">
+      <div class="wrap">
+        <h2>Let's connect</h2>
+        <p class="sub">Always happy to meet curious minds and exchange ideas.</p>
+        <p class="muted">For academic, creative, educational, or collaborative conversations, feel free to reach out.</p>
+        <div class="contact-links">
+          <!-- Ganti tanda # dengan tautan profilmu sebelum website dipublikasikan. -->
+          <a href="https://www.instagram.com/rahmaftrs?utm_source=ig_web_button_share_sheet&obrf=ZDNlZDc0MzIxNw==" aria-label="Instagram Rahma">Instagram</a>
+          <a href="https://www.linkedin.com/in/rahma-fitria-su-ud-201652377/" aria-label="LinkedIn Rahma">LinkedIn</a>
+          <a href="mailto:rahmafitria.s23@gmail.com" aria-label="Email Rahma">Email</a>
+        </div>
+        <p class="hint">Tautan kontak masih perlu diisi dengan akun milikmu.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">© 2026 Rahma Fitria Su’ud · A little universe, still expanding.</div>
+  </footer>
+
+  <script>
+    // Tambahkan tulisan baru ke daftar ini. Ganti url "#" dengan alamat halaman/artikel.
+    const posts = [
+      {
+        judul: "Why I Keep Asking Why: The Beauty of Being Curious",
+        kategori: "Personal Reflections",
+        tanggal: "Coming soon",
+        url: "#"
+      },
+      {
+        judul: "Seeing the World Through a Physics Student's Eyes",
+        kategori: "Science",
+        tanggal: "Coming soon",
+        url: "#"
+      },
+      {
+        judul: "When Knowledge Meets Everyday Life",
+        kategori: "Education",
+        tanggal: "Coming soon",
+        url: "#"
+      },
+      {
+        judul: "The Art of Becoming: Learning Beyond Achievement",
+        kategori: "Philosophy",
+        tanggal: "Coming soon",
+        url: "#"
+      }
+    ];
+
+    const categories = [
+      "All",
+      "Science",
+      "Philosophy",
+      "Education",
+      "Psychology",
+      "History & Society",
+      "Personal Reflections"
+    ];
+
+    const filterBox = document.getElementById("filters");
+    const postBox = document.getElementById("posts");
+    let activeCategory = "All";
+
+    function renderPosts() {
+      postBox.replaceChildren();
+
+      const visiblePosts = posts.filter(post =>
+        activeCategory === "All" || post.kategori === activeCategory
+      );
+
+      if (visiblePosts.length === 0) {
+        const emptyMessage = document.createElement("p");
+        emptyMessage.className = "hint";
+        emptyMessage.textContent = "No entries in this category yet. New notes will appear here.";
+        postBox.appendChild(emptyMessage);
+        return;
+      }
+
+      visiblePosts.forEach(post => {
+        const link = document.createElement("a");
+        link.className = "post";
+        link.href = post.url;
+
+        const meta = document.createElement("span");
+        meta.textContent = `${post.kategori} · ${post.tanggal}`;
+
+        const title = document.createElement("h3");
+        title.textContent = post.judul;
+
+        link.append(meta, title);
+        postBox.appendChild(link);
+      });
+    }
+
+    categories.forEach(category => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.textContent = category;
+      button.setAttribute("aria-pressed", String(category === activeCategory));
+
+      button.addEventListener("click", () => {
+        activeCategory = category;
+
+        [...filterBox.children].forEach(item => {
+          item.setAttribute("aria-pressed", String(item === button));
+        });
+
+        renderPosts();
+      });
+
+      filterBox.appendChild(button);
+    });
+
+    renderPosts();
+  </script>
+</body>
+</html>

@@ -132,6 +132,30 @@
     .btn.ghost { background: transparent; color: var(--burgundy); }
     .btn:hover { transform: translateY(-3px); }
     .orbit { width: 100%; max-width: 370px; margin-inline: auto; }
+    .hero-visual {
+  position: relative;
+  width: 100%;
+  max-width: 370px;
+  margin-inline: auto;
+}
+
+.hero-photo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+
+  width: 30%;
+  aspect-ratio: 1 / 1;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+
+  border-radius: 50%;
+  border: 4px solid var(--paper);
+  box-shadow: 0 5px 20px rgba(80, 45, 40, .2);
+}
     .orbit .ring { fill: none; stroke: var(--line); stroke-width: 1.2; }
     .orbit g { transform-origin: 200px 200px; animation: spin linear infinite; }
     .orbit .a { animation-duration: 26s; }
@@ -257,7 +281,9 @@
       nav { align-items: flex-start; flex-direction: column; padding-block: 10px; gap: 4px; }
       nav ul { width: 100%; gap: 16px; padding-bottom: 4px; }
       .hero { min-height: auto; grid-template-columns: 1fr; padding-block: 64px; }
-      .orbit { max-width: 260px; }
+      .hero-visual {
+  max-width: 260px;
+}
       .cols { grid-template-columns: 1fr; gap: 28px; }
       section { padding: 64px 0; }
       .exp td:first-child { width: 35%; }
@@ -361,17 +387,29 @@
           <a class="btn ghost" href="#about">Get to know me</a>
         </div>
       </div>
+      
+<div class="hero-visual">
 
-      <svg class="orbit" viewBox="0 0 400 400" role="img" aria-label="Ilustrasi orbit planet yang bergerak">
-        <circle class="ring" cx="200" cy="200" r="70"/>
-        <circle class="ring" cx="200" cy="200" r="125"/>
-        <circle class="ring" cx="200" cy="200" r="180"/>
-        <circle cx="200" cy="200" r="26" fill="#6e1f2f"/>
-        <g class="a"><circle cx="270" cy="200" r="9" fill="#d9a5a8"/></g>
-        <g class="b"><circle cx="200" cy="75" r="12" fill="#6b5242"/></g>
-        <g class="c"><circle cx="380" cy="200" r="7" fill="#6e1f2f"/><circle cx="20" cy="200" r="5" fill="#d9a5a8"/></g>
-      </svg>
-    </div>
+  <!-- ORBIT: tetap dipertahankan -->
+  <svg class="orbit" viewBox="0 0 400 400" role="img" aria-label="Ilustrasi orbit planet yang bergerak">
+    <circle class="ring" cx="200" cy="200" r="70"/>
+    <circle class="ring" cx="200" cy="200" r="125"/>
+    <circle class="ring" cx="200" cy="200" r="180"/>
+    <circle cx="200" cy="200" r="26" fill="#6e1f2f"/>
+    <g class="a"><circle cx="270" cy="200" r="9" fill="#d9a5a8"/></g>
+    <g class="b"><circle cx="200" cy="75" r="12" fill="#6b5242"/></g>
+    <g class="c"><circle cx="380" cy="200" r="7" fill="#6e1f2f"/><circle cx="20" cy="200" r="5" fill="#d9a5a8"/></g>
+  </svg>
+
+  <!-- FOTO RAHMA -->
+  <img
+    class="hero-photo"
+    src="images/rahma-home.jpg"
+    alt="Portrait of Rahma"
+  >
+
+</div>
+    
 
     <!-- ABOUT -->
     <section id="about">

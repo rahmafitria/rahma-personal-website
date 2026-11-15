@@ -154,8 +154,32 @@
       gap: 34px;
       padding-block: 76px 90px;
     }
-    .hero h1 { margin: 12px 0 18px; letter-spacing: -.025em; }
-    .hero h1 i { color: var(--pink); font-weight: 500; }
+    .hero h1 {
+  display: inline-block;
+  position: relative;
+  margin: 12px 0 28px;
+  letter-spacing: -.025em;
+  text-shadow:
+    1px 1px 0 #ead9d0,
+    2px 2px 0 rgba(110, 31, 47, .10),
+    3px 4px 8px rgba(80, 45, 40, .12);
+}
+
+.hero h1 i {
+  color: var(--pink);
+  font-weight: 500;
+  text-shadow:
+    1px 1px 0 #f0d7d4,
+    2px 3px 7px rgba(110, 31, 47, .13);
+}
+
+.hero h1::after {
+  content: "";
+  display: block;
+  width: 85%;
+  margin-top: 15px;
+  border-bottom: 2px dotted var(--pink);
+}
     .tagline {
       max-width: 34ch;
       margin-bottom: 18px;

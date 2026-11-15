@@ -99,6 +99,52 @@
     }
     nav a:hover { color: var(--burgundy); }
 
+    /* Decorative moving lines */
+.moving-lines {
+  width: 100%;
+  overflow: hidden;
+  padding: 15px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.line-track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  animation: lineMove 24s linear infinite;
+}
+
+.line-item {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  padding-right: 22px;
+  color: var(--brown);
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  letter-spacing: .12em;
+  white-space: nowrap;
+}
+
+.line-item span {
+  color: var(--pink);
+  font-size: 1.3rem;
+}
+
+@keyframes lineMove {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .line-track {
+    animation: none;
+  }
+}
     /* Hero */
     .hero {
       min-height: 590px;
@@ -403,7 +449,29 @@
     </div>
   </header>
 
-  <main>
+<div class="moving-lines">
+  <div class="line-track">
+
+    <div class="line-item">
+      <span>✦</span> A LIFE IN PROGRESS
+      <span>—</span> THINK
+      <span>✧</span> CREATE
+      <span>—</span> EXPLORE
+      <span>✦</span> KEEP GROWING
+    </div>
+
+    <div class="line-item" aria-hidden="true">
+      <span>✦</span> A LIFE IN PROGRESS
+      <span>—</span> THINK
+      <span>✧</span> CREATE
+      <span>—</span> EXPLORE
+      <span>✦</span> KEEP GROWING
+    </div>
+
+  </div>
+</div>
+
+<main>
     <!-- HOME -->
     <div class="wrap hero" id="home">
       <div>

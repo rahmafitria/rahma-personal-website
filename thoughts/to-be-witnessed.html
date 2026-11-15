@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>To Be Witnessed, To Witness — A Little Universe of Rahma</title>
+
+  <meta name="description" content="Tentang menyaksikan seseorang bertumbuh, dan menemukan sesuatu dalam diri sendiri.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --ivory: #f7f1e8;
+      --paper: #fbf8f2;
+      --burgundy: #6e1f2f;
+      --pink: #d9a5a8;
+      --brown: #6b5242;
+      --ink: #2a1c1a;
+      --line: #dccfbe;
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans: 'Jost', sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: var(--ivory);
+      color: var(--ink);
+      font-family: var(--sans);
+      line-height: 1.8;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .wrap {
+      width: min(850px, 88%);
+      margin: auto;
+    }
+
+    header {
+      padding: 25px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      color: var(--burgundy);
+      font: 600 1.4rem var(--serif);
+    }
+
+    .back-link {
+      color: var(--brown);
+      font-size: .85rem;
+    }
+
+    .back-link:hover {
+      color: var(--burgundy);
+    }
+
+    .article-header {
+      padding: 100px 0 55px;
+      text-align: center;
+    }
+
+    .category {
+      color: var(--pink);
+      font-size: .78rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+
+    h1 {
+      color: var(--burgundy);
+      font: 500 clamp(3rem, 8vw, 5.5rem)/.95 var(--serif);
+      margin-bottom: 25px;
+    }
+
+    .subtitle {
+      color: var(--brown);
+      font: italic 1.35rem/1.5 var(--serif);
+      max-width: 550px;
+      margin: auto;
+    }
+
+    .article-meta {
+      margin-top: 30px;
+      color: var(--brown);
+      font-size: .75rem;
+      letter-spacing: .12em;
+    }
+
+    .article-image {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      margin-bottom: 55px;
+    }
+
+    .article-body {
+      max-width: 690px;
+      margin: auto;
+      padding-bottom: 80px;
+    }
+
+    .article-body p {
+      color: var(--brown);
+      font-size: 1.05rem;
+      line-height: 2;
+      margin-bottom: 25px;
+      text-align: justify;
+    }
+
+    .article-body .opening {
+      color: var(--burgundy);
+      font: 500 1.5rem/1.6 var(--serif);
+      text-align: left;
+    }
+
+    .music-note {
+      margin: 50px 0;
+      padding: 25px;
+      border-top: 1px dotted var(--pink);
+      border-bottom: 1px dotted var(--pink);
+    }
+
+    .music-label {
+      color: var(--pink);
+      font-size: .72rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .music-note h3 {
+      color: var(--burgundy);
+      font: 500 1.8rem var(--serif);
+      margin-bottom: 5px;
+    }
+
+    .music-note > p {
+      font-size: .9rem;
+      margin-bottom: 18px;
+      text-align: left;
+    }
+
+    .spotify-frame {
+      width: 100%;
+      height: 152px;
+      border: 0;
+      border-radius: 12px;
+    }
+
+    .article-quote {
+      text-align: center;
+      color: var(--burgundy);
+      font: italic 2rem/1.4 var(--serif);
+      padding: 35px 10px;
+      margin: 45px 0;
+      border-top: 1px dotted var(--pink);
+      border-bottom: 1px dotted var(--pink);
+    }
+
+    .article-footer {
+      text-align: center;
+      padding: 35px 0 65px;
+      border-top: 1px solid var(--line);
+    }
+
+    .article-footer p {
+      color: var(--brown);
+      font: italic 1.5rem var(--serif);
+      margin-bottom: 20px;
+    }
+
+    .article-footer a {
+      color: var(--burgundy);
+      border-bottom: 1px dotted var(--pink);
+      padding-bottom: 5px;
+      font-size: .9rem;
+    }
+
+    @media (max-width: 600px) {
+      .article-header {
+        padding: 75px 0 40px;
+      }
+
+      .article-body p {
+        font-size: 1rem;
+      }
+
+      .article-body .opening {
+        font-size: 1.3rem;
+      }
+
+      .article-image {
+        margin-bottom: 35px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="wrap header-inner">
+      <a href="../index.html" class="brand">A little universe of Rahma.</a>
+      <a href="../index.html#thoughts" class="back-link">← Back to thoughts</a>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="article-header wrap">
+      <p class="category">On People, Love & Admiration</p>
+
+      <h1>To Be Witnessed,<br>To Witness</h1>
+
+      <p class="subtitle">
+        Barangkali, salah satu hal paling menyenangkan dalam hidup
+        adalah menemukan seseorang yang membuat kita ingin
+        mengenal dunia sedikit lebih jauh.
+      </p>
+
+      <p class="article-meta">A PERSONAL REFLECTION · 2026</p>
+    </section>
+
+    <div class="wrap">
+      <img
+        src="../images/to-be-witnessed.jpg"
+        alt="To Be Witnessed, To Witness"
+        class="article-image"
+      >
+    </div>
+
+    <article class="article-body">
+
+      <p class="opening">
+        Pernah nggak, sih, kamu bertemu seseorang yang membuatmu
+        berpikir, "Wah, ternyata ada juga manusia seperti ini di dunia"?
+      </p>
+
+      <p>
+        Bukan karena ia melakukan sesuatu yang luar biasa. Bukan pula
+        karena ia selalu punya jawaban untuk setiap pertanyaan.
+        Justru terkadang, hal-hal sederhana yang dilakukannya membuat
+        kita diam-diam merasa kagum. Cara ia bercerita tentang sesuatu
+        yang disukai, bagaimana ia menanggapi sebuah persoalan, atau
+        bagaimana matanya berbinar ketika membicarakan mimpi-mimpinya.
+      </p>
+
+      <p>
+        Aku rasa, mengagumi seseorang adalah pengalaman yang menarik.
+        Kita bisa menemukan begitu banyak hal dari seseorang yang
+        sebelumnya bahkan tidak pernah terpikirkan. Tiba-tiba ingin
+        membaca buku yang pernah ia ceritakan, mencari tahu tentang
+        topik yang membuatnya bersemangat, atau sekadar mendengarkan
+        lebih lama ketika ia mulai membicarakan sesuatu yang ia pahami.
+      </p>
+
+      <p>
+        Lucu, ya, bagaimana seseorang bisa memperkenalkan kita pada
+        dunia yang sebelumnya tidak pernah kita kunjungi?
+      </p>
+
+      <p>
+        Dan menurutku, ada sesuatu yang jauh lebih menarik daripada
+        sekadar mengenal seseorang: menyaksikannya bertumbuh.
+      </p>
+
+      <p>
+        Menyaksikan bagaimana ia berusaha mencapai sesuatu yang pernah
+        diceritakannya dengan penuh semangat. Bagaimana ia melewati
+        hari-hari yang tidak mudah, belajar dari kesalahan, lalu kembali
+        mencoba. Bagaimana hal-hal yang dahulu hanya berupa rencana
+        perlahan menemukan bentuknya dalam kehidupan nyata.
+      </p>
+
+      <p>
+        Rasanya menyenangkan mengetahui bahwa kita pernah menjadi
+        pendengar bagi mimpi-mimpi yang kini sedang diperjuangkan seseorang.
+      </p>
+
+      <p>
+        Aku juga berpikir bahwa kekaguman yang baik seharusnya tidak
+        membuat kita merasa lebih kecil. Sebaliknya, ia justru membuka
+        kemungkinan-kemungkinan baru. Kita mulai menyadari bahwa ada
+        banyak hal yang bisa dipelajari, banyak tempat yang bisa
+        dikunjungi, banyak pemikiran yang bisa dipahami, dan begitu
+        banyak versi diri yang masih mungkin kita temui.
+      </p>
+
+      <p>
+        Barangkali, orang-orang yang kita kagumi tidak selalu hadir
+        untuk menjadi bagian dari seluruh perjalanan kita. Ada yang
+        datang sebentar, ada yang menetap lebih lama, dan ada pula
+        yang hanya kita temui dalam sebuah percakapan. Namun, bukan
+        berarti pertemuan-pertemuan itu kehilangan maknanya.
+      </p>
+
+      <p>
+        Sebab, bukankah menyenangkan mengetahui bahwa di suatu tempat,
+        ada seseorang yang sedang sibuk mengejar mimpinya? Seseorang
+        yang terus belajar, bertumbuh, dan menemukan hal-hal baru
+        tentang dirinya sendiri?
+      </p>
+
+      <p>Dan bukankah lebih menyenangkan lagi jika kita diberi kesempatan untuk menyaksikannya?</p>
+
+      <div class="music-note">
+        <p class="music-label">A song to accompany this thought</p>
+        <h3>Sempurna</h3>
+        <p>Andra and The Backbone</p>
+
+        <iframe
+          class="spotify-frame"
+          src="https://open.spotify.com/embed/search/Sempurna%20Andra%20and%20The%20Backbone"
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy">
+        </iframe>
+      </div>
+
+      <p>
+        Pada akhirnya, aku ingin menjadi seseorang yang juga bisa
+        menyaksikan orang lain dengan baik. Tidak hanya hadir ketika
+        semuanya menyenangkan, tetapi juga menghargai proses yang
+        tidak selalu terlihat. Menjadi pendengar bagi cerita-cerita
+        kecil, turut berbahagia atas pencapaian yang mungkin bagi
+        orang lain tampak sederhana, dan tidak lupa bahwa setiap
+        orang sedang menjalani perjalanannya masing-masing.
+      </p>
+
+      <p>
+        Kita sering kali ingin ditemukan, dipahami, dan disaksikan.
+        Namun, jangan-jangan, belajar menyaksikan orang lain dengan
+        sungguh-sungguh juga merupakan hal yang tidak kalah penting.
+      </p>
+
+      <div class="article-quote">
+        To be witnessed, and to witness.
+      </div>
+
+      <p>
+        Sebab, ternyata, mengagumi seseorang tidak selalu harus
+        berakhir dengan memiliki. Terkadang, cukup dengan mengetahui
+        bahwa ia ada, sedang bertumbuh, dan menjalani hidupnya dengan
+        baik, sudah menjadi kebahagiaan tersendiri.
+      </p>
+
+      <p>
+        Dan mungkin, itulah salah satu cara paling sederhana untuk
+        mencintai kehidupan: dengan tidak berhenti menemukan hal-hal
+        baik dalam diri manusia lain.
+      </p>
+
+    </article>
+
+  </main>
+
+  <footer class="article-footer">
+    <div class="wrap">
+      <p>With love, and a little wonder.</p>
+      <a href="../index.html#thoughts">← Back to my little universe</a>
+    </div>
+  </footer>
+
+</body>
+</html>

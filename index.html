@@ -11,78 +11,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
 
-  /* FEATURED ARTICLE */
-.featured-article {
-  padding: 75px 0;
-  border-bottom: 1px solid var(--line);
-}
-
-.featured-label {
-  color: var(--pink);
-  font-size: .8rem;
-  letter-spacing: .18em;
-  text-transform: uppercase;
-  margin-bottom: 25px;
-}
-
-.featured-card {
-  display: grid;
-  grid-template-columns: 1fr 1.1fr;
-  gap: 40px;
-  align-items: center;
-  padding: 25px;
-  background: var(--paper);
-  border: 1px solid var(--line);
-}
-
-.featured-image {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-}
-
-.featured-category {
-  color: var(--pink);
-  font-size: .75rem;
-  letter-spacing: .15em;
-  text-transform: uppercase;
-  margin-bottom: 15px;
-}
-
-.featured-card h2 {
-  color: var(--burgundy);
-  font-size: clamp(2rem, 4vw, 3rem);
-  line-height: 1.1;
-  margin-bottom: 18px;
-}
-
-.featured-description {
-  color: var(--brown);
-  line-height: 1.8;
-  margin-bottom: 25px;
-}
-
-.featured-link {
-  display: inline-block;
-  color: var(--burgundy);
-  text-decoration: none;
-  border-bottom: 1px dotted var(--pink);
-  padding-bottom: 5px;
-  transition: .25s;
-}
-
-.featured-link:hover {
-  color: var(--pink);
-  letter-spacing: .04em;
-}
-
-@media (max-width: 700px) {
-  .featured-card {
-    grid-template-columns: 1fr;
-    gap: 25px;
-    padding: 18px;
-  }
-}
   <style>
     :root {
       --ivory: #f7f1e8;
@@ -867,6 +795,79 @@
     grid-template-columns: 1fr;
   }
 }
+    /* FEATURED ARTICLE */
+.featured-article {
+  padding: 75px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.featured-label {
+  color: var(--pink);
+  font-size: .8rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  margin-bottom: 25px;
+}
+
+.featured-card {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 40px;
+  align-items: center;
+  padding: 25px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+}
+
+.featured-image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.featured-category {
+  color: var(--pink);
+  font-size: .75rem;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.featured-card h2 {
+  color: var(--burgundy);
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.1;
+  margin-bottom: 18px;
+}
+
+.featured-description {
+  color: var(--brown);
+  line-height: 1.8;
+  margin-bottom: 25px;
+}
+
+.featured-link {
+  display: inline-block;
+  color: var(--burgundy);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--pink);
+  padding-bottom: 5px;
+  transition: .25s;
+}
+
+.featured-link:hover {
+  color: var(--pink);
+  letter-spacing: .04em;
+}
+
+@media (max-width: 700px) {
+  .featured-card {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    padding: 18px;
+  }
+}
   </style>
 </head>
 
@@ -955,7 +956,46 @@
     <p class="sub">
       Words, reflections, and things I find worth thinking about.
     </p>
+<!-- FEATURED ARTICLE -->
+<section class="featured-article" id="featured-article">
+  <div class="wrap">
 
+    <p class="featured-label">
+      A little reflection · 01
+    </p>
+
+    <article class="featured-card">
+
+      <img
+        src="images/to-be-witnessed.jpg"
+        alt="To Be Witnessed, To Witness"
+        class="featured-image"
+      >
+
+      <div class="featured-content">
+
+        <p class="featured-category">
+          On People, Love & Admiration
+        </p>
+
+        <h2>To Be Witnessed,<br>To Witness</h2>
+
+        <p class="featured-description">
+          Barangkali, salah satu hal paling menyenangkan
+          dalam hidup adalah menemukan seseorang yang
+          membuat kita ingin mengenal dunia sedikit lebih jauh.
+        </p>
+
+        <a href="thoughts/to-be-witnessed.html"
+           class="featured-link">
+          Read the story ↗
+        </a>
+
+      </div>
+    </article>
+
+  </div>
+</section>
     <div class="thought-grid">
 
       <!-- FIRST ARTICLE -->

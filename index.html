@@ -233,6 +233,88 @@
     .orbit .c { animation-duration: 64s; }
     @keyframes spin { to { transform: rotate(360deg); } }
 
+    /* ABOUT SECTION */
+.about-kicker {
+  color: var(--pink);
+  font-size: .8rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.about-heading {
+  margin-bottom: 12px;
+}
+
+.about-layout {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 55px;
+  margin-top: 38px;
+}
+
+.about-story p {
+  color: var(--brown);
+  margin-bottom: 18px;
+}
+
+.about-facts {
+  border-top: 1px solid var(--line);
+}
+
+.about-fact {
+  display: grid;
+  grid-template-columns: 42px 1fr;
+  gap: 12px;
+  padding: 17px 0;
+  border-bottom: 1px dotted var(--pink);
+}
+
+.about-number {
+  color: var(--pink);
+  font: italic 1.3rem var(--serif);
+}
+
+.about-fact strong {
+  display: block;
+  color: var(--burgundy);
+  font: 600 1.3rem var(--serif);
+}
+
+.about-fact span:last-child {
+  color: var(--brown);
+  font-size: .9rem;
+}
+
+.about-quote {
+  margin-top: 55px;
+  padding: 28px 0;
+  border-top: 1px dotted var(--pink);
+  border-bottom: 1px dotted var(--pink);
+  text-align: center;
+  color: var(--burgundy);
+  font: italic 1.8rem/1.4 var(--serif);
+}
+
+.about-quote small {
+  display: block;
+  margin-top: 12px;
+  color: var(--brown);
+  font: .75rem var(--sans);
+  letter-spacing: .15em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 760px) {
+  .about-layout {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .about-quote {
+    font-size: 1.5rem;
+  }
+}
     /* Shared layouts */
     .cols { display: grid; grid-template-columns: 1.2fr 1fr; gap: 48px; }
     .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 28px; }
@@ -533,28 +615,107 @@
 </div>
 
 <!-- ABOUT -->
-    <section id="about">
-      <div class="wrap">
-        <h2>About me</h2>
-        <p class="sub">A little more than a name and a degree.</p>
-        <div class="cols">
-          <div>
-            <p>I am a Physics undergraduate at Universitas Brawijaya with a curiosity that moves between the sciences, languages, education, and the creative arts. Alongside my academic journey, I have spent more than three years exploring graphic design and photography, starting in high school.</p>
-            <p>Through student organizations, educational communities, and creative projects, I have learned to work with people, manage responsibilities, and turn ideas into something tangible — from event administration and documentation to visual communication and social media content.</p>
-            <p>I believe curiosity becomes more meaningful when it is shared: through thoughtful conversations, useful work, and opportunities to contribute to the people around us.</p>
-          </div>
-          <ul class="facts">
-            <li><strong>A few things about me</strong></li>
-            <li>Based in Malang, Indonesia.</li>
-            <li>Originally from Rembang, Central Java.</li>
-            <li>Physics undergraduate at Universitas Brawijaya.</li>
-            <li>Interested in science, education, languages, and humanities.</li>
-            <li>Drawn to photography, painting, writing, and meaningful conversations.</li>
-            <li>Always curious; always learning.</li>
-          </ul>
-        </div>
+<section id="about">
+  <div class="wrap">
+
+    <p class="about-kicker">01 — The person behind the universe</p>
+
+    <h2 class="about-heading">About me</h2>
+
+    <p class="sub">
+      A little more than a name and a degree.
+    </p>
+
+    <div class="about-layout">
+
+      <!-- MY STORY -->
+      <div class="about-story">
+
+        <p>
+          I am a Physics undergraduate at Universitas Brawijaya
+          with a curiosity that moves between the sciences,
+          languages, education, and the creative arts.
+        </p>
+
+        <p>
+          Alongside my academic journey, I have spent more
+          than three years exploring graphic design and
+          photography, starting in high school.
+        </p>
+
+        <p>
+          Through student organizations, educational
+          communities, and creative projects, I have learned
+          to work with people, manage responsibilities, and
+          turn ideas into something tangible.
+        </p>
+
+        <p>
+          I believe curiosity becomes more meaningful when
+          it is shared — through thoughtful conversations,
+          useful work, and opportunities to contribute
+          to the people around us.
+        </p>
+
       </div>
-    </section>
+
+      <!-- LITTLE FACTS -->
+      <div class="about-facts">
+
+        <div class="about-fact">
+          <span class="about-number">01</span>
+          <div>
+            <strong>Based in</strong>
+            <span>Malang, Indonesia</span>
+          </div>
+        </div>
+
+        <div class="about-fact">
+          <span class="about-number">02</span>
+          <div>
+            <strong>Originally from</strong>
+            <span>Rembang, Central Java</span>
+          </div>
+        </div>
+
+        <div class="about-fact">
+          <span class="about-number">03</span>
+          <div>
+            <strong>Currently studying</strong>
+            <span>Physics at Universitas Brawijaya</span>
+          </div>
+        </div>
+
+        <div class="about-fact">
+          <span class="about-number">04</span>
+          <div>
+            <strong>Curious about</strong>
+            <span>Science, education, languages, and humanities</span>
+          </div>
+        </div>
+
+        <div class="about-fact">
+          <span class="about-number">05</span>
+          <div>
+            <strong>Drawn to</strong>
+            <span>Photography, painting, writing, and meaningful conversations</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- QUOTE -->
+    <div class="about-quote">
+      "I find beauty in understanding things —
+      whether they belong to the universe,
+      human nature, or the little details of everyday life."
+
+      <small>A thought to live by</small>
+    </div>
+
+  </div>
+</section>
 
     <!-- ACADEMIA -->
     <section id="academia">

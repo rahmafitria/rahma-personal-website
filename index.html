@@ -315,6 +315,193 @@
     font-size: 1.5rem;
   }
 }
+    /* ACADEMIA — EDITORIAL STYLE */
+
+.academic-kicker {
+  color: var(--pink);
+  font-size: .8rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.academic-intro {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 25px;
+  margin-bottom: 38px;
+}
+
+.academic-note {
+  max-width: 230px;
+  color: var(--brown);
+  font: italic 1.25rem/1.35 var(--serif);
+  text-align: right;
+}
+
+.academic-education {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 25px;
+  padding: 30px;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  margin-bottom: 55px;
+}
+
+.academic-label {
+  display: inline-block;
+  margin-bottom: 12px;
+  padding: 5px 13px;
+  border: 1px solid var(--pink);
+  border-radius: 30px;
+  color: var(--burgundy);
+  font-size: .72rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.academic-education h3 {
+  font-size: 2rem;
+  color: var(--burgundy);
+}
+
+.academic-education p {
+  color: var(--brown);
+  margin-top: 8px;
+}
+
+.academic-symbol {
+  font: 5rem var(--serif);
+  color: var(--pink);
+  opacity: .8;
+}
+
+.academic-section-title {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 22px;
+}
+
+.academic-section-title h3 {
+  color: var(--burgundy);
+  font-size: 1.8rem;
+}
+
+.academic-section-title span {
+  color: var(--pink);
+  font-size: .8rem;
+  letter-spacing: .12em;
+}
+
+.academic-achievements {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 55px;
+}
+
+.academic-card {
+  min-height: 215px;
+  padding: 22px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  position: relative;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.academic-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(80, 45, 40, .08);
+}
+
+.academic-index {
+  color: var(--pink);
+  font: italic 1.2rem var(--serif);
+}
+
+.academic-card strong {
+  display: block;
+  margin: 22px 0 8px;
+  color: var(--burgundy);
+  font: 600 1.7rem/1.1 var(--serif);
+}
+
+.academic-card p {
+  color: var(--brown);
+  font-size: .9rem;
+}
+
+.academic-bottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  padding-top: 30px;
+  border-top: 1px dotted var(--pink);
+}
+
+.academic-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.academic-tag {
+  padding: 8px 15px;
+  border: 1px solid var(--line);
+  border-radius: 30px;
+  background: var(--paper);
+  color: var(--brown);
+  font-size: .9rem;
+}
+
+.academic-tag.highlight {
+  border-style: dashed;
+  border-color: var(--pink);
+  color: var(--burgundy);
+}
+
+.academic-skills {
+  color: var(--brown);
+  line-height: 2;
+  margin-top: 12px;
+}
+
+@media (max-width: 760px) {
+  .academic-intro {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .academic-note {
+    text-align: left;
+  }
+
+  .academic-education {
+    grid-template-columns: 1fr;
+  }
+
+  .academic-symbol {
+    display: none;
+  }
+
+  .academic-achievements {
+    grid-template-columns: 1fr;
+  }
+
+  .academic-card {
+    min-height: auto;
+  }
+
+  .academic-bottom {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
     /* Shared layouts */
     .cols { display: grid; grid-template-columns: 1.2fr 1fr; gap: 48px; }
     .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 28px; }
@@ -718,49 +905,149 @@
 </section>
 
     <!-- ACADEMIA -->
-    <section id="academia">
-      <div class="wrap">
+<section id="academia">
+  <div class="wrap">
+
+    <p class="academic-kicker">
+      02 — A journey of learning
+    </p>
+
+    <div class="academic-intro">
+      <div>
         <h2>Academic journey</h2>
-        <p class="sub">Learning to understand the universe, one question at a time.</p>
-        <div class="grid">
-          <article class="item">
-            <h3>Education</h3>
-            <ul>
-              <li>Undergraduate student in Physics, Universitas Brawijaya.</li>
-              <li>Previously studied in an environment that combined formal education and pesantren learning.</li>
-            </ul>
-          </article>
-          <article class="item">
-            <h3>Selected achievements</h3>
-            <ul>
-              <li>Juara 1 Munaqosyah Imrithi, Haflah Tasyakkur PP Al-Hamidiyyah 1 Lasem.</li>
-              <li>Rank 4, KSM Physics at Rembang regency level.</li>
-              <li>Top 13 Finalists in the Pekan Ilmiah Nasional Infographic Competition</li>
-            </ul>
-          </article>
-          <article class="item">
-            <h3>Learning interests</h3>
-            <ul>
-              <li>Physics and the natural sciences.</li>
-              <li>Mathematics and scientific reasoning.</li>
-              <li>Nahwu and Shorof.</li>
-              <li>How science connects with philosophy and society.</li>
-            </ul>
-          </article>
-          <article class="item">
-            <h3>Creative &amp; practical skills</h3>
-            <ul>
-              <li>Graphic design and visual content creation (3+ years of experience).</li>
-              <li>Canva and Figma.</li>
-              <li>Photography, event documentation, and basic photo editing.</li>
-              <li>Administration, document archiving, and Microsoft Office.</li>
-              <li>Google Docs and Google Sheets.</li>
-              <li>Communication, teamwork, time management, and adaptability.</li>
-            </ul>
-                   </article>
+        <p class="sub">
+          Learning to understand the universe,
+          one question at a time.
+        </p>
+      </div>
+
+      <p class="academic-note">
+        "Every question is a beginning
+        of something worth discovering."
+      </p>
+    </div>
+
+    <!-- EDUCATION -->
+    <div class="academic-education">
+
+      <div>
+        <span class="academic-label">
+          Currently pursuing
+        </span>
+
+        <h3>Physics Undergraduate</h3>
+
+        <p>
+          Faculty of Mathematics and Natural Sciences<br>
+          Universitas Brawijaya · Malang, Indonesia
+        </p>
+
+        <p>
+          Exploring the principles behind nature,
+          matter, energy, and the universe.
+        </p>
+      </div>
+
+      <div class="academic-symbol">∑</div>
+
+    </div>
+
+
+    <!-- ACHIEVEMENTS -->
+    <div class="academic-section-title">
+      <span>01 /</span>
+      <h3>Selected achievements</h3>
+    </div>
+
+    <div class="academic-achievements">
+
+      <article class="academic-card">
+        <span class="academic-index">01</span>
+
+        <strong>1st Place</strong>
+
+        <p>
+          Munaqosyah Imrithi<br>
+          Haflah Tasyakkur PP Al-Hamidiyyah 1 Lasem
+        </p>
+      </article>
+
+
+      <article class="academic-card">
+        <span class="academic-index">02</span>
+
+        <strong>Rank 4</strong>
+
+        <p>
+          Kompetisi Sains Madrasah (KSM)
+          Physics — Rembang Regency Level
+        </p>
+      </article>
+
+
+      <article class="academic-card">
+        <span class="academic-index">03</span>
+
+        <strong>Top 13</strong>
+
+        <p>
+          Finalist — Pekan Ilmiah Nasional
+          Infographic Competition
+        </p>
+      </article>
+
+    </div>
+
+
+    <!-- LEARNING INTERESTS & SKILLS -->
+    <div class="academic-bottom">
+
+      <div>
+        <div class="academic-section-title">
+          <span>02 /</span>
+          <h3>Fields of curiosity</h3>
+        </div>
+
+        <p class="muted">
+          Subjects and ideas I love exploring.
+        </p>
+
+        <div class="academic-tags">
+          <span class="academic-tag highlight">Physics</span>
+          <span class="academic-tag">Mathematics</span>
+          <span class="academic-tag">Natural Sciences</span>
+          <span class="academic-tag">Scientific Reasoning</span>
+          <span class="academic-tag">Nahwu</span>
+          <span class="academic-tag">Shorof</span>
+          <span class="academic-tag">Philosophy</span>
+          <span class="academic-tag">Science & Society</span>
         </div>
       </div>
-    </section>
+
+
+      <div>
+        <div class="academic-section-title">
+          <span>03 /</span>
+          <h3>Skills & toolkit</h3>
+        </div>
+
+        <p class="muted">
+          A growing collection of practical skills.
+        </p>
+
+        <p class="academic-skills">
+          Graphic Design · Canva · Figma<br>
+          Photography · Photo Editing<br>
+          Microsoft Office · Google Workspace<br>
+          Administration · Document Archiving<br>
+          Communication · Teamwork · Adaptability
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
 
     <!-- EXPERIENCES -->
     <section id="experiences">
